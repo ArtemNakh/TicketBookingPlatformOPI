@@ -1,0 +1,41 @@
+﻿@model IEnumerable<TicketBookingPlatform.Core.Models.Place>
+
+@{
+    ViewData["Title"] = "Places";
+}
+
+<h2>Places</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Country</th>
+            <th>Region</th>
+            <th>City</th>
+            <th>Street</th>
+            <th>Number</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var place in Model)
+        {
+            <tr>
+                <td>@place.Id</td>
+                <td>@place.Country</td>
+                <td>@place.Region</td>
+                <td>@place.City</td>
+                <td>@place.Street</td>
+                <td>@place.NumberStreet</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@place.Id">Details</a> |
+                    <a asp-action="Edit" asp-route-id="@place.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@place.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create" class="btn btn-primary">Add New Place</a>

@@ -1,0 +1,37 @@
+﻿@model IEnumerable<TicketBookingPlatform.Core.Models.Reservation>
+
+@{
+    ViewData["Title"] = "Reservations";
+}
+
+<h2>Reservations</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>User</th>
+            <th>Event</th>
+            <th>Date of Reservation</th>
+            <th>Is Paid</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var reservation in Model)
+        {
+            <tr>
+                <td>@reservation.Id</td>
+                <td>@reservation.User.Name</td>
+                <td>@reservation.Event.Title</td>
+                <td>@reservation.DateReservation.ToShortDateString()</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@reservation.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@reservation.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create" class="btn btn-primary">Add New Reservation</a>

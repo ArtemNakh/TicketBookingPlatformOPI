@@ -1,0 +1,29 @@
+﻿@model TicketBookingPlatform.Models.ReservationCreate
+
+@{
+    ViewData["Title"] = "Створення бронювання";
+}
+
+<h2>Створення бронювання</h2>
+
+<form asp-action="Create" method="post">
+    <!-- Поле для вибору події -->
+    <div class="form-group">
+        <label asp-for="EventId" class="control-label">Подія</label>
+        <select asp-for="EventId" class="form-control" asp-items="@(new SelectList(ViewBag.Events, "Id", "Title"))">
+            <option value="">Оберіть подію</option>
+        </select>
+        <span asp-validation-for="EventId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="DateReservation" class="control-label">Дата бронювання</label>
+        <input asp-for="DateReservation" class="form-control" type="date" />
+        <span asp-validation-for="DateReservation" class="text-danger"></span>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Зберегти</button>
+</form>
+
+<a asp-action="Index" class="btn btn-secondary">Повернутись до списку</a>

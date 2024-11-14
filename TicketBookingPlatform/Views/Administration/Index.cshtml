@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Адміністративна панель";
+}
+
+<h2>Адміністративна панель</h2>
+
+<div class="admin-dashboard">
+    <div class="btn-group-vertical" style="width: 100%; max-width: 400px;">
+        <a href="@Url.Action("Index", "User")" class="btn btn-primary btn-lg mb-3">Користувачі</a>
+        <a href="@Url.Action("Index", "Reservation")" class="btn btn-primary btn-lg mb-3">Бронювання</a>
+        <a href="@Url.Action("Index", "Events")" class="btn btn-primary btn-lg mb-3">Події</a>
+        <a href="@Url.Action("Index", "Place")" class="btn btn-primary btn-lg mb-3">Місця</a>
+    </div>
+</div>
+
+<style>
+    .admin-dashboard {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 70vh;
+    }
+</style>

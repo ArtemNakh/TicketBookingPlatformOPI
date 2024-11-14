@@ -1,0 +1,31 @@
+﻿@model TicketBookingPlatform.Core.Models.Place
+
+@{
+    ViewData["Title"] = "Place Details";
+}
+
+<h2>Place Details</h2>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">ID</dt>
+        <dd class="col-sm-10">@Model.Id</dd>
+
+        <dt class="col-sm-2">Country</dt>
+        <dd class="col-sm-10">@Model.Country</dd>
+
+        <dt class="col-sm-2">Region</dt>
+        <dd class="col-sm-10">@Model.Region</dd>
+
+        <dt class="col-sm-2">City</dt>
+        <dd class="col-sm-10">@Model.City</dd>
+
+        <dt class="col-sm-2">Street</dt>
+        <dd class="col-sm-10">@Model.Street</dd>
+
+        <dt class="col-sm-2">Number</dt>
+        <dd class="col-sm-10">@Model.NumberStreet</dd>
+    </dl>
+</div>
+
+<a asp-action="Index" class="btn btn-secondary">Back to List</a>
